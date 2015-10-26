@@ -1,0 +1,5 @@
+Copy WSO2 ML 1.0.0 pack here
+
+e.g.: 
+/etc/puppet/files/packs/ml/1.0.0 
+                        -- wso2ml-1.0.0.zip	

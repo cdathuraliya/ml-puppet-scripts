@@ -1,0 +1,37 @@
+# This file contains common data for a given deployment.
+---
+nodeinfo: 
+ # Product version
+ version: 1.0.0
+ # Cluster maintenance mode
+ # Allowed values
+ # 1. zero - Stop carbon server process, remove carbon home and remove the locally
+ #           stored product pack zip file. New product pack file will be downloaded from 
+ #           puppet master file server.
+ # 2. new - Stop carbon server process, remove carbon home.
+ # 3. refresh - Remove lock file, stop carbon server process.
+ # Currently set to zero mode
+ # i.e., each deployment will be setup from a fresh product pack 
+ # downloaded from puppet master and configured using product templates
+ maintenance_mode: new
+ # Used by the WSO2 base module
+ owner: root
+ group: root
+ # SVN repo information used for depsync setup
+ # svn_url: http://192.168.57.233/svn/testrepo/ml
+ # svn_username: user1
+ # svn_password: user1
+
+# These are the default port information
+# Used by nginx templates to configure listen ports and other ports
+# using port offset of each product instance
+defaultportinfo:
+ HTTP: 80 
+ HTTPS: 443
+ HTTPservlet: 9763
+ HTTPSservlet: 9443 
+ NHTTP: 8280
+ NHTTPS: 8243
+
+testconfig:
+ enableEncryptPersistedTokens: false

@@ -1,0 +1,19 @@
+# This file contains all the datasources information
+---
+datasources:
+ # Following datasources information used by the product module
+ registry_db_connection_url : jdbc:mysql://qaamysql:3306/regdb?autoReconnect=true
+ registry_db_user : root
+ registry_db_password : root
+ registry_db_driver_name : com.mysql.jdbc.Driver
+ userstore_db_connection_url : jdbc:mysql://qaamysql:3306/userdb?autoReconnect=true
+ userstore_db_user : root
+ userstore_db_password : root
+ userstore_db_driver_name : com.mysql.jdbc.Driver
+ ml_db_connection_url : jdbc:mysql://qaamysql:3306/mldb?autoReconnect=true
+ ml_db_user : root
+ ml_db_password : root
+ ml_db_driver_name : com.mysql.jdbc.Driver
+ # Following credentials are used by the database cleanup module.
+ db_root_user : root
+ db_root_user_password : root

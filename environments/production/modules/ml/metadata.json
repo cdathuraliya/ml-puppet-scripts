@@ -1,0 +1,58 @@
+{
+  "name": "thilina-apimanager",
+  "version": "0.2.0",
+  "source": "https://github.com/wso2/Puppet",
+  "author": "Thilina Piyasundara",
+  "license": "Apache License Version 2.0",
+  "summary": "WSO2 APIManager puppet module",
+  "description": "WSO2 AM 1.6.0 version puppet module",
+  "project_page": "",
+  "dependencies": [
+    {
+      "name": "thilina/wso2base"
+    },
+    {
+      "name": "thilina/elb"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "340df23cd30acac0ceb6051fcbc604bd",
+    "Modulefile": "1f1c4c761202168516cfac300c9fd370",
+    "README": "b827926d41870bd0dbb01f9bcaef0e30",
+    "manifests/apistore.pp": "ebe9bec9228a80b4de914ec40485ab71",
+    "manifests/clean.pp": "eff2a527c8a8dff148ffa98c5331b6a9",
+    "manifests/create_worker.pp": "99e71c016e26b2ba7f3df4cdf223575a",
+    "manifests/deploy.pp": "4e02dc15946b14ae2438da635db15a64",
+    "manifests/gateway.pp": "96831f84a5dbcc7bd9de0d2570f4f29a",
+    "manifests/init.pp": "a18040b696e14f6187dd105d1d50292d",
+    "manifests/initialize.pp": "e96a83d2162d1d052dc8f93d1f36511b",
+    "manifests/keymanager.pp": "f6eee9c0841344aa28b7c15373ca255c",
+    "manifests/params.pp": "4ef52477e2b233cf55f061e2023caf96",
+    "manifests/publisher.pp": "956b26296895cdb25a76a3c61442f901",
+    "manifests/pubstore.pp": "bd6637ab6b2a97df24e8faf385be7045",
+    "manifests/push_apistore_templates.pp": "a22fcbf3f7891b270a6d4368dbe1a5df",
+    "manifests/push_gateway_templates.pp": "ff67d754af5e1e426d8b4f87f0dffcfd",
+    "manifests/push_keymanager_templates.pp": "8a79dbda770e2d6196a15d5f8787c2da",
+    "manifests/push_publisher_templates.pp": "a57a95244e4181e7ec17371b1c5c9629",
+    "manifests/push_pubstore_templates.pp": "27c6675454e291967ba2a5307c7d0077",
+    "manifests/push_templates.pp": "ce1e9ddddbdfe4de676d2fcc5467230a",
+    "manifests/start.pp": "b70565c613b289d86e44efb6b071eb92",
+    "templates/1.6.0/conf/api-manager.xml.erb": "34e3b976c822b23967444fe7b948fa3c",
+    "templates/1.6.0/conf/axis2/axis2.xml.erb": "099dfb0a6a0bc8a155d4e3386d87019b",
+    "templates/1.6.0/conf/carbon.xml.erb": "36018733315ee3915a79fdc595d92653",
+    "templates/1.6.0/conf/datasources/master-datasources/_remote.erb": "e6729a0fde402aacf260f1b79b3cde00",
+    "templates/1.6.0/conf/datasources/master-datasources.xml.erb": "473729ee8b2c46b836680806af4ed273",
+    "templates/1.6.0/conf/registry/_remote.erb": "ac251851a8efbe37d575e94489411e14",
+    "templates/1.6.0/conf/registry.xml.erb": "901ec606bfb82707e71f2954c90fb244",
+    "templates/1.6.0/conf/tomcat/catalina-server.xml.erb": "d71caa115f69dfd51af3123f7b8bc85e",
+    "templates/1.6.0/conf/user-mgt/_roldap.erb": "b4d824e4947cd3b7399077fe44678aa5",
+    "templates/1.6.0/conf/user-mgt/_rwldap.erb": "4ca0e3caa63020a5be0ffe89ac189145",
+    "templates/1.6.0/conf/user-mgt.xml.erb": "d4534a19e3e7b39e8dbd48bac4c4750d",
+    "templates/1.6.0/deployment/server/jaggeryapps/publisher/site/conf/site.json.erb": "3fe1bb82042ea4216498608644ad2645",
+    "templates/1.6.0/deployment/server/jaggeryapps/store/site/conf/site.json.erb": "82514cce26e0e86fc709a3fe7c80602d",
+    "templates/1.6.0/wso2server.sh.erb": "10bb05031a3fd4e580c4c960219c7e93"
+  }
+}

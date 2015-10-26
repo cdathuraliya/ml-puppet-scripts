@@ -1,0 +1,5 @@
+Copy the mysql connector jar here.
+
+e.g.: 
+/etc/puppet/files/mysql-connecter
+   `-- mysql-connector-java-5.1.36-bin.jar

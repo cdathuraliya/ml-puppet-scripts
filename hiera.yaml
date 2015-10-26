@@ -1,0 +1,12 @@
+---
+:backends: 
+  - yaml
+:yaml:
+  :datadir: /etc/puppet/environments/%{::environment}/hieradata/%{::deployment}
+:hierarchy:
+  - "%{::deployment_pattern}/hosts"
+  - "%{::deployment_pattern}/%{::clientcert}"
+  - "%{::deployment_pattern}/pattern"
+  - database
+  - datasources
+  - common

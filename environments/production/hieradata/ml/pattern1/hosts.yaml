@@ -1,0 +1,5 @@
+hosts:
+ puppetmaster_domain: puppet,192.168.57.207
+
+nodes:
+ standalone-ml: 192.168.57.208

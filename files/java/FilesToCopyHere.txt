@@ -1,0 +1,21 @@
+You can copy any JDK version tarball here 
+which you are planning to use across the 
+API Manager deployment cluster 
+
+e.g.: 
+/etc/puppet/files/java 	
+                    |-- jdk-7u51-linux-x64.tar.gz
+                    |-- jdk-7u67-linux-x64.tar.gz
+                    |-- jdk-7u79-linux-x64.gz
+                    `-- jdk-7u80-linux-x64.gz
+
+To use a given JDK version across the cluster you have to 
+do the following.
+1. Go to /etc/puppet/environments/production/modules/wso2base/manifests
+2. Open params.pp file to edit
+3. Under Java section give your required JDK version
+e.g.: 
+    # Java
+    $java_home  = "jdk1.7.0_79"
+    $package    = "jdk-7u79-linux-x64.gz"
+
