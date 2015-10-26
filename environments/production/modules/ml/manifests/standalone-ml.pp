@@ -84,7 +84,7 @@ class ml::standalone-ml (
   ml::push_templates {
     $service_templates:
       target    => $carbon_home,
-      directory => $deployment_code,
+      directory => "${deployment_code}/${version}",
       owner     => $owner,
       group     => $group,
       require   => ml::deploy[$deployment_code];
