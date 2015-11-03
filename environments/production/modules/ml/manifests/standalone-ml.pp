@@ -50,7 +50,7 @@ class ml::standalone-ml (
   $service_code    = 'ml'
   $carbon_home     = "${target}/wso2${service_code}-${carbon_version}"
 
- $service_templates = ['conf/metrics.xml',]
+ $service_templates = ['conf/metrics.xml', 'conf/etc/spark-config.xml']
 
  $common_templates = []
 
