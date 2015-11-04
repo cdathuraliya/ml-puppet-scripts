@@ -1,5 +1,5 @@
-node /standalone-ml/ {
- class { "ml::standalone-ml":
+node /server-node/ {
+ class { "ml::server-node":
   version => "1.0.0",
   owner => "root",
   group => "root",

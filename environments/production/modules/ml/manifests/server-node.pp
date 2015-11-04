@@ -34,7 +34,7 @@
 #
 # Sample Usage:
 #
-class ml::standalone-ml (
+class ml::server-node (
   $version 		        = '1.0.0',
   $offset  		        = 0,
   $owner   		        = 'root',
