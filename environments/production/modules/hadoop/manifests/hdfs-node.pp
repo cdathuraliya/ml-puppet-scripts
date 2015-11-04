@@ -49,7 +49,7 @@ class hadoop::hdfs-node (
   $service_code    = 'hdfs-node'
   $hadoop_home     = "${target}/apache-hadoop-${hadoop_version}"
 
- $service_templates = []
+ $service_templates = ['etc/hadoop/core-site.xml', 'etc/hadoop/hdfs-site.xml', 'etc/hadoop/mapred-site.xml']
 
  $common_templates = []
 
@@ -74,7 +74,7 @@ class hadoop::hdfs-node (
 
   hadoop::push_templates {
     $service_templates:
-      target    => $hadoop_home,
+      target    => "/mnt/hadoop/hadoop-2.6.0",
       directory => "${deployment_code}/${version}",
       owner     => $owner,
       group     => $group,
@@ -87,6 +87,14 @@ class hadoop::hdfs-node (
       group     => $group,
       mode      => '0775',
       content   => template("${deployment_code}/hadoop-env.sh.erb"),
+  }
+
+  file { "${target}/hadoop-2.6.0/bin/format.sh":
+      ensure    => present,
+      owner     => $owner,
+      group     => $group,
+      mode      => '0775',
+      content   => template("${deployment_code}/format.sh.erb"),
   }
 
   hadoop::start { $deployment_code:

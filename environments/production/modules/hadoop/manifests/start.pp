@@ -17,10 +17,25 @@
 # Starts the service once the deployment is successful.
 
 define hadoop::start ($target, $owner, $java_home) {
-  exec { "strating_${name}":
-    environment => "JAVA_HOME=${java_home}",
-    user    => $owner,
-    path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/bin/',
-    command => "/mnt/hadoop/hadoop-2.6.0/sbin/start-all.sh",
+  exec {
+   "formatting_${name}":
+      environment => "JAVA_HOME=${java_home}",
+      user    => $owner,
+      path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/bin/',
+      command => "/mnt/hadoop/hadoop-2.6.0/bin/format.sh";
+
+   "strating_${name}":
+      environment => "JAVA_HOME=${java_home}",
+      user    => $owner,
+      path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/bin/',
+      command => "/mnt/hadoop/hadoop-2.6.0/sbin/start-all.sh",
+      require => Exec["formatting_${name}"];
+
+   "creating_folder_for_${name}":
+      environment => "JAVA_HOME=${java_home}",
+      user    => $owner,
+      path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/bin/',
+      command => "/mnt/hadoop/hadoop-2.6.0/bin/hadoop fs -mkdir /ml",
+      require => Exec["strating_${name}"];
   }
 }
