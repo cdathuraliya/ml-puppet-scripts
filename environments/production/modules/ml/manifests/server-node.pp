@@ -34,6 +34,7 @@
 #
 # Sample Usage:
 #
+
 class ml::server-node (
   $version 		        = '1.0.0',
   $offset  		        = 0,
@@ -42,6 +43,8 @@ class ml::server-node (
   $target  		        = '/mnt/packs',
   $maintenance_mode             = 'new',
   $clustering                   = false,
+  $storage_type                 = 'file',
+  $spark_master                 = 'local'
 
 ) inherits ml::params {
 

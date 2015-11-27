@@ -1,6 +1,6 @@
 # This file contains common data for a given deployment.
 ---
-nodeinfo: 
+serverinfo:
  # Product version
  version: 1.0.0
  # Cluster maintenance mode
@@ -22,10 +22,10 @@ nodeinfo:
 # Used by nginx templates to configure listen ports and other ports
 # using port offset of each product instance
 defaultportinfo:
- HTTP: 80 
+ HTTP: 80
  HTTPS: 443
  HTTPservlet: 9763
- HTTPSservlet: 9443 
+ HTTPSservlet: 9443
  NHTTP: 8280
  NHTTPS: 8243
 

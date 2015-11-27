@@ -50,20 +50,20 @@
 
 	<!-- Optional element. This element should point to a HDFS location where 
 		ML is allowed to store files. -->
-	<HdfsURL>hdfs://192.168.57.21:9000</HdfsURL>
+	<HdfsURL>hdfs://192.168.57.59:9000</HdfsURL>
 	
 	<!-- Storage Details for uploaded datasets. StorageType can be either "file" 
 		or "hdfs". Default storage type is file and location is {carbon.home}/datasets -->
 	<DatasetStorage> 
-		<StorageType>hdfs</StorageType> 
-		<StorageDirectory>hdfs://192.168.57.21:9000/ml</StorageDirectory> 
+		<StorageType><%= @storage_type %></StorageType> 
+		<StorageDirectory>hdfs://192.168.57.59:9000/ml</StorageDirectory> 
 	</DatasetStorage>
 
 	<!-- Storage Details for built ML Models. StorageType can be either "file" 
 		or "hdfs". Default storage type is file and location is {carbon.home}/models -->
 	<ModelStorage> 
-		<StorageType>hdfs</StorageType> 
-		<StorageDirectory>hdfs://192.168.57.21:9000/ml</StorageDirectory> 
+		<StorageType><%= @storage_type %></StorageType> 
+		<StorageDirectory>hdfs://192.168.57.59:9000/ml</StorageDirectory> 
 	</ModelStorage>
 
 	<!-- Lists all supported machine learning algorithms. -->

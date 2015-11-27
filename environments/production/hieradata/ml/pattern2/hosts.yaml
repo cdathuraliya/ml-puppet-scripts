@@ -1,7 +1,7 @@
 hosts:
- puppetmaster_domain: puppet,192.168.57.207
+ puppetmaster_domain: puppet,192.168.57.55
 
 nodes:
- server-node: 192.168.57.208
- master-node: 192.168.57.209
- hdfs-node: 192.168.57.21
+ server-node: 192.168.57.56
+ master-node: 192.168.57.58
+ hdfs-node: 192.168.57.59
