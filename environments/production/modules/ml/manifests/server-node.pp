@@ -44,7 +44,9 @@ class ml::server-node (
   $maintenance_mode             = 'new',
   $clustering                   = false,
   $storage_type                 = 'file',
-  $spark_master                 = 'local'
+  $spark_master                 = 'local',
+  $dataset_directory            = '/mnt/packs/wso2ml-1.0.0/datasets',
+  $model_directory              = '/mnt/packs/wso2ml-1.0.0/models'
 
 ) inherits ml::params {
 

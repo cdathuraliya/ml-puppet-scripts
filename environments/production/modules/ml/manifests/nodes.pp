@@ -7,5 +7,7 @@ node /server-node/ {
   maintenance_mode => "new",
   storage_type => $serverinfo[storage_type],
   spark_master => $serverinfo[spark_master],
+  dataset_directory => $serverinfo[dataset_directory],
+  model_directory => $serverinfo[model_directory],
  }
 }

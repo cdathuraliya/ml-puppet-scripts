@@ -56,14 +56,14 @@
 		or "hdfs". Default storage type is file and location is {carbon.home}/datasets -->
 	<DatasetStorage> 
 		<StorageType><%= @storage_type %></StorageType> 
-		<StorageDirectory>hdfs://192.168.57.59:9000/ml</StorageDirectory> 
+		<StorageDirectory><%= @dataset_directory %></StorageDirectory> 
 	</DatasetStorage>
 
 	<!-- Storage Details for built ML Models. StorageType can be either "file" 
 		or "hdfs". Default storage type is file and location is {carbon.home}/models -->
 	<ModelStorage> 
 		<StorageType><%= @storage_type %></StorageType> 
-		<StorageDirectory>hdfs://192.168.57.59:9000/ml</StorageDirectory> 
+		<StorageDirectory><%= @model_directory %></StorageDirectory> 
 	</ModelStorage>
 
 	<!-- Lists all supported machine learning algorithms. -->
