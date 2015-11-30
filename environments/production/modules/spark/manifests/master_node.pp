@@ -34,7 +34,7 @@
 #
 # Sample Usage:
 #
-class spark::master-node (
+class spark::master_node (
   $version 		        = '1.4.1',
   $offset  		        = 0,
   $owner   		        = 'root',
@@ -47,7 +47,7 @@ class spark::master-node (
 
   $deployment_code = 'spark'
   $spark_version  = $version
-  $service_code    = 'master-node'
+  $service_code    = 'master_node'
   $spark_home     = "${target}/apache-spark-${spark_version}"
 
  $service_templates = []

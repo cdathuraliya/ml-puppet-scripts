@@ -35,7 +35,7 @@ define hadoop::start ($target, $owner, $java_home) {
       environment => "JAVA_HOME=${java_home}",
       user    => $owner,
       path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/bin/',
-      command => "/mnt/hadoop/hadoop-2.6.0/bin/hadoop fs -mkdir /ml",
+      command => "/mnt/hadoop/hadoop-2.6.0/bin/hadoop fs -mkdir -p /ml",
       require => Exec["strating_${name}"];
   }
 }

@@ -35,7 +35,7 @@
 # Sample Usage:
 #
 
-class ml::server-node (
+class ml::server_node (
   $version 		        = '1.0.0',
   $offset  		        = 0,
   $owner   		        = 'root',
@@ -45,8 +45,8 @@ class ml::server-node (
   $clustering                   = false,
   $storage_type                 = 'file',
   $spark_master                 = 'local',
-  $dataset_directory            = '/mnt/packs/wso2ml-1.0.0/datasets',
-  $model_directory              = '/mnt/packs/wso2ml-1.0.0/models'
+  $dataset_directory            = '${target}/wso2ml-${carbon_version}/datasets',
+  $model_directory              = '${target}/wso2ml-${carbon_version}/models'
 
 ) inherits ml::params {
 
@@ -108,6 +108,14 @@ class ml::server-node (
       group     => $group,
       mode      => '0775',
       content   => template("${deployment_code}/wso2${service_code}.erb"),
+  }
+
+  file { ["${target}/wso2${service_code}-${carbon_version}/datasets", "${target}/wso2${service_code}-${carbon_version}/models"]:
+      ensure    => directory,
+      owner     => $owner,
+      group     => $group,
+      mode      => '0775',
+      require   => ml::initialize[$deployment_code],
   }
 
   service { "wso2${service_code}":

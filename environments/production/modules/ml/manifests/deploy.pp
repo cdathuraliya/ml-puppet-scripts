@@ -18,16 +18,16 @@
 # Executes the deployment by pushing all necessary configurations and patches
 
 define ml::deploy ($service, $target, $owner, $group) {
-  file { $target:
-    ensure       => present,
-    owner        => $owner,
-    group        => $group,
-    mode         => '0755',
-    sourceselect => all,
-    ignore       => '.svn',
-    recurse      => remote,
-    source       => [
-      "puppet:///modules/${service}/configs/",
-      "puppet:///modules/${service}/patches/"]
-  }
+#  file { $target:
+#    ensure       => present,
+#    owner        => $owner,
+#    group        => $group,
+#    mode         => '0755',
+#    sourceselect => all,
+#    ignore       => '.svn',
+#    recurse      => remote,
+#    source       => [
+#      "puppet:///modules/${service}/configs/",
+#      "puppet:///modules/${service}/patches/"]
+#  }
 }

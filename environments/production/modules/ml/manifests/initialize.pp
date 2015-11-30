@@ -18,6 +18,19 @@
 # Initializing the deployment
 
 define ml::initialize ($repo, $version, $service, $local_dir, $target, $owner,) {
+
+  exec {
+    "create_dir_path":
+      path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+      command => "mkdir -p ${local_dir}",
+  }
+  ->
+  file {
+    "${local_dir}/wso2${service}-${version}.zip":
+      source  => "puppet:///files/packs/ml/${version}/wso2${service}-${version}.zip",
+      recurse => true,
+  }
+  ->
   exec {
     "creating_target_for_${name}":
       path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',

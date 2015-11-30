@@ -1,5 +1,5 @@
-node /hdfs-node/ {
- class { "hadoop::hdfs-node":
+node /hadoopserver/ {
+ class { "hadoop::hdfs_node":
   version => "2.6.0",
   owner => "root",
   group => "root",

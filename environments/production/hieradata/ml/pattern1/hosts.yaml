@@ -1,5 +1,7 @@
 hosts:
- puppetmaster_domain: puppet,192.168.57.55
+ puppetmaster_domain: puppet,puppetmaster
+ server_domain: server.ml.wso2.com,servernode
 
 nodes:
- standalone-ml: 192.168.57.56
+ mlserver: 192.168.57.56
+ puppetmaster: 192.168.57.55

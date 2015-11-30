@@ -33,7 +33,7 @@
 #
 # Sample Usage:
 #
-class hadoop::hdfs-node (
+class hadoop::hdfs_node (
   $version 		        = '2.6.0',
   $offset  		        = 0,
   $owner   		        = 'root',
@@ -46,7 +46,7 @@ class hadoop::hdfs-node (
 
   $deployment_code = 'hadoop'
   $hadoop_version  = $version
-  $service_code    = 'hdfs-node'
+  $service_code    = 'hdfs_node'
   $hadoop_home     = "${target}/apache-hadoop-${hadoop_version}"
 
  $service_templates = ['etc/hadoop/core-site.xml', 'etc/hadoop/hdfs-site.xml', 'etc/hadoop/mapred-site.xml']

@@ -26,6 +26,6 @@
 #
 
 class ml::params {
-   $package_repo 			= hiera('package_repo', 'https://github.com/wso2/product-ml/releases/download/v1.0.0-rc2')
-   $local_package_dir 		= hiera('local_package_dir', '/mnt/packs')
+   $package_repo      = hiera('package_repo', 'https://github.com/wso2/product-ml/releases/download/v1.0.0-rc1')
+   $local_package_dir = hiera('local_package_dir', '/mnt/packs')
 }

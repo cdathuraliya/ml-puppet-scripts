@@ -1,7 +1,7 @@
 hosts:
- puppetmaster_domain: puppet,192.168.57.55
+ puppetmaster_domain: puppet,puppetmaster
 
 nodes:
- server-node: 192.168.57.56
- master-node: 192.168.57.58
- hdfs-node: 192.168.57.59
+ mlserver: 192.168.57.56
+ sparkmaster: 192.168.57.58
+ hadoopserver: 192.168.57.59
