@@ -1,7 +1,11 @@
 hosts:
  puppetmaster_domain: puppet,puppetmaster
+ server_domain: server.ml.wso2.com,mlserver
+ sparkmaster_domain: master.spark.wso2.com,sparkmaster
+ hadoopserver_domain: server.hadoop.wso2.com,hadoopserver
 
 nodes:
  mlserver: 192.168.57.56
  sparkmaster: 192.168.57.58
  hadoopserver: 192.168.57.59
+ puppetmaster: 192.168.57.55

@@ -26,7 +26,7 @@
 #
 
 class spark::params {
-   $package_repo 	= hiera('package_repo', 'https://github.com/wso2/product-ml/releases/download/v1.0.0-rc2')
+   $package_repo 	= hiera('package_repo', 'wget http://d3kbcqa49mib13.cloudfront.net/spark-1.4.1-bin-hadoop2.6.tgz')
    $local_package_dir 	= hiera('local_package_dir', '/mnt/spark')
    $java_home 		= hiera('java_home', '/home/ubuntu/tools/jdk1.7.0_40')
 }

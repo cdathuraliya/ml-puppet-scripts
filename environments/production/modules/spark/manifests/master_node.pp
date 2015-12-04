@@ -88,43 +88,44 @@ class spark::master_node (
       group     => $group,
       mode      => '0775',
       content   => template("${deployment_code}/spark-env.sh.erb"),
+      require   => spark::initialize[$deployment_code];
   }
-
+  ->
   file { "${target}/spark-1.4.1-bin-hadoop2.6/ml":
       ensure    => "directory",
       owner     => $owner,
       group     => $group,
       mode      => '0775',
   }
-
+  ->
   file { "${target}/spark-1.4.1-bin-hadoop2.6/ml/org.wso2.carbon.ml.core_1.0.2.jar":
       owner     => $owner,
       group     => $group,
       mode      => '0775',
       source    => "puppet:///modules/spark/org.wso2.carbon.ml.core_1.0.2.jar"
   }
-
+  ->
   file { "${target}/spark-1.4.1-bin-hadoop2.6/ml/org.wso2.carbon.ml.commons_1.0.2.jar":
       owner     => $owner,
       group     => $group,
       mode      => '0775',
       source    => "puppet:///modules/spark/org.wso2.carbon.ml.commons_1.0.2.jar"
   }
-
+  ->
   file { "${target}/spark-1.4.1-bin-hadoop2.6/ml/org.wso2.carbon.ml.database_1.0.2.jar":
       owner     => $owner,
       group     => $group,
       mode      => '0775',
       source    => "puppet:///modules/spark/org.wso2.carbon.ml.database_1.0.2.jar"
   }
-
+  ->
   file { "${target}/spark-1.4.1-bin-hadoop2.6/ml/kryo_2.24.0.wso2v1.jar":
       owner     => $owner,
       group     => $group,
       mode      => '0775',
       source    => "puppet:///modules/spark/kryo_2.24.0.wso2v1.jar"
   }
-
+  ->
   spark::start { $deployment_code:
     target  => $spark_home,
     owner   => $owner,

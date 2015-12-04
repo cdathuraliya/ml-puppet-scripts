@@ -6,22 +6,22 @@
 # 3. Trigger deployment from each puppet agent using the setup.sh script provided
 #
 # Load initial data and define stages
-import "wso2base/loaddata"
+#import "wso2base/loaddata"
 
 # Default node definition
 import "wso2base/defaultnode"
 
 # wso2base node definition
-import "wso2base/basenode"
+#import "wso2base/basenode"
 
 # Loadbalancer configurations
-import "wso2base/loadbalancer"
+#import "wso2base/loadbalancer"
 
 # Database server definition
-import "wso2base/dbserver"
+#import "wso2base/dbserver"
 
 # Jenkins definitions
-import "wso2base/jenkins"
+#import "wso2base/jenkins"
 
 import "ml/nodes"
 
