@@ -7,6 +7,7 @@ node /mlserver/ {
   maintenance_mode => "zero",
   storage_type => $serverinfo[storage_type],
   spark_master => $serverinfo[spark_master],
+  hdfs_url => $serverinfo[hdfs_url],
   dataset_directory => $serverinfo[dataset_directory],
   model_directory => $serverinfo[model_directory],
  }

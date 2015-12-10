@@ -45,6 +45,7 @@ class ml::server_node (
   $clustering                   = false,
   $storage_type                 = 'file',
   $spark_master                 = 'local',
+  $hdfs_url                     = 'hdfs://localhost:9000/ml',
   $dataset_directory            = '${target}/wso2ml-${carbon_version}/datasets',
   $model_directory              = '${target}/wso2ml-${carbon_version}/models'
 
@@ -101,15 +102,7 @@ class ml::server_node (
       group     => $group,
       require    => ml::deploy[$deployment_code];
   }
-
-  file { "/etc/init.d/wso2${service_code}":
-      ensure    => present,
-      owner     => $owner,
-      group     => $group,
-      mode      => '0775',
-      content   => template("${deployment_code}/wso2${service_code}.erb"),
-  }
-
+  ->
   file { ["${target}/wso2${service_code}-${carbon_version}/datasets", "${target}/wso2${service_code}-${carbon_version}/models"]:
       ensure    => directory,
       owner     => $owner,
@@ -117,17 +110,13 @@ class ml::server_node (
       mode      => '0775',
       require   => ml::initialize[$deployment_code],
   }
-
-  service { "wso2${service_code}":
-      ensure     => running,
-      hasstatus  => true,
-      hasrestart => true,
-      enable     => true,
-      require    => [
-            initialize[$deployment_code],
-            deploy[$deployment_code],
-            push_templates[$service_templates],
-            file["/etc/init.d/wso2${service_code}"],
-      ]
+  ->
+  ml::start { $deployment_code:
+    target  => "${target}/wso2${service_code}-${carbon_version}",
+    owner   => $owner,
+    require  => [
+                 ml::initialize[$deployment_code],
+                 ml::push_templates[$service_templates],
+                 ],
   }
 }

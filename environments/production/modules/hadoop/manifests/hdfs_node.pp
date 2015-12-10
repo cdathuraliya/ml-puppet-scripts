@@ -41,6 +41,7 @@ class hadoop::hdfs_node (
   $target  		        = '/mnt/hadoop',
   $maintenance_mode             = 'new',
   $clustering                   = false,
+  $hdfs_url                     = 'hdfs://localhost:9000/ml'
 
 ) inherits hadoop::params {
 
@@ -80,7 +81,7 @@ class hadoop::hdfs_node (
       group     => $group,
       require   => hadoop::initialize[$deployment_code];
   }
-
+  ->
   file { "${target}/hadoop-2.6.0/etc/hadoop/hadoop-env.sh":
       ensure    => present,
       owner     => $owner,
@@ -88,7 +89,7 @@ class hadoop::hdfs_node (
       mode      => '0775',
       content   => template("${deployment_code}/hadoop-env.sh.erb"),
   }
-
+  ->
   file { "${target}/hadoop-2.6.0/bin/format.sh":
       ensure    => present,
       owner     => $owner,
@@ -96,7 +97,7 @@ class hadoop::hdfs_node (
       mode      => '0775',
       content   => template("${deployment_code}/format.sh.erb"),
   }
-
+  ->
   hadoop::start { $deployment_code:
     target  => $hadoop_home,
     owner   => $owner,

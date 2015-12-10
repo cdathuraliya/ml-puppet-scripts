@@ -1,2 +1,3 @@
 ---
-hdfs-node:
+hdfsnode:
+ hdfs_url: hdfs://192.168.57.59:9000

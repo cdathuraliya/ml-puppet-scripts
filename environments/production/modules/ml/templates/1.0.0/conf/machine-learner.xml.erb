@@ -50,7 +50,7 @@
 
 	<!-- Optional element. This element should point to a HDFS location where 
 		ML is allowed to store files. -->
-	<HdfsURL>hdfs://192.168.57.59:9000</HdfsURL>
+	<HdfsURL><%= @hdfs_url %></HdfsURL>
 	
 	<!-- Storage Details for uploaded datasets. StorageType can be either "file" 
 		or "hdfs". Default storage type is file and location is {carbon.home}/datasets -->

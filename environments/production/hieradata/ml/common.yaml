@@ -31,3 +31,8 @@ defaultportinfo:
 
 testconfig:
  enableEncryptPersistedTokens: false
+
+java:
+  java_home: jdk1.7.0_40
+  java_package: jdk-7u40-linux-x64.tar.gz
+  java_dir: /opt

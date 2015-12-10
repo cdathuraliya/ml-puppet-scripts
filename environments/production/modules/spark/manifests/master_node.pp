@@ -42,6 +42,7 @@ class spark::master_node (
   $target  		        = '/mnt/spark',
   $maintenance_mode             = 'new',
   $clustering                   = false,
+  $spark_ip                     = 'localhost'
 
 ) inherits spark::params {
 
