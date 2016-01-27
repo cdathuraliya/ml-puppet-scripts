@@ -1,23 +1,26 @@
 #!/bin/bash
+echo "Running server warm-up tests..."
 
-echo "Running server warm-up samples..."
 # declare an array of algorithm folder names
-declare -a default_algos=("decision-tree" "k-means" "lasso-regression" "linear-regression" "logistic-regression-lbfgs" "logistic-regression-sgd" "naive-bayes" "random-forest" "ridge-regression" "svm")
+declare -a all_algos=()
+# read algorithm folder names from algo-info.conf file
+IFS=":"
+while read -r algo name sample_type || [ -n "$algo" ]; do
+    all_algos+=(${algo})
+done < algo-info.conf
 
 i=0
-for default_algo in "${default_algos[@]}"
+for algo in "${all_algos[@]}"
 do
-	if [ "$i" -eq 0 ]; then
-		# navigate to default samples
-		cd warmup/"$default_algo"/
-	else
-		# navigate between algorithms
-		cd ../"$default_algo"/
-	fi
-
-	# run sample script
-	sh model-generation.sh
-
-	((i++))
+    if [ "$i" -eq 0 ]; then
+        # navigate to perf-test directory
+        cd perf-test/"$algo"/
+    else
+        # navigate between algorithms
+        cd ../"$algo"/
+    fi
+    # run sample script
+    ./model-generation.sh wmp
+    ((i++))
 done
-echo "Server warm-up samples completed"
+echo "Server warm-up tests completed"
