@@ -1,0 +1,14 @@
+###Performance test automation scripts for WSO2 ML 1.0.0
+* Enable CSV reporting for [WSO2 Carbon Metrics](https://github.com/wso2/carbon-metrics) by making the following change in `<ML_HOME>/repository/conf/metrics.xml`.
+
+        <CSV>
+            <Enabled>true</Enabled>
+            <Location>${carbon.home}/repository/logs/metrics/</Location>
+            <!-- Polling Period in seconds.
+                This is the period for polling metrics from the metric registry and
+                update CSV files in the given location -->
+            <PollingPeriod>60</PollingPeriod>
+        </CSV>
+* Place this directory (`perf-test`) under `<ML_HOME>`.
+* Run `run-tests.sh` script using `./run-tests.sh`.
+* Performance test results will be saved in CSV files `perf-results-tuned-model-building.csv` and `perf-results-tuned-prediction.csv` under `perf-test` directory.
